@@ -137,7 +137,7 @@ const taskRoutes = require('./routes/taskRoutes');
 
 // Use ROUTERS
 app.use('/auth', authRoutes);
-app.use('/task', taskRoutes);
+app.use('/tasks', taskRoutes);
 
 // Test route
 app.get('/', (req, res) => {
