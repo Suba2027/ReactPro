@@ -114,15 +114,24 @@
 // services -> business logic and external api calls
 // tests -> test cases and test suites
 // ---------------------------------------------------------------
+// Node.js is the runtime, Express is the framework. We import Express using require, 
+// then we create an Express application instance using express(), store it in app, 
+// and use app to define middleware, routes, and start the server.
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-
+const cors=require('cors');
+// CORS (Cross-Origin Resource Sharing)
+//cors is used to allow requests from different origins like frontend ,backend and api testing tools like postman
+// The browser blocks the request for security reasons.
+// Backend may still receive the request, but the response is blocked by the browser.
 // Load environment variables
 dotenv.config();
-
+// Reads a file named .env from your project root
+// Loads the values inside it into process.env
+// Makes those values available anywhere in your application
 const app = express();
-
+app.use(cors());
 // Middleware
 app.use(express.json());
 

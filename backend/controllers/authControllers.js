@@ -47,7 +47,11 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-
+// bcryptjs==Used to hash passwords before storing them in the database.
+// Also used to compare hashed passwords during login.
+// jsonwebtoken (jwt)
+// Used to generate authentication tokens.
+// Tokens are sent to the client after login and used for protected routes.
 exports.register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
